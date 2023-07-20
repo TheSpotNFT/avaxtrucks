@@ -30,10 +30,11 @@ export const Nav = ({
           <div className="desktop-nav">
             <ul
               className={`overflow-y-visible xl:flex xl:items-center md:pb-0 sm:pb-0 absolute xl:static bg-avaxtruck-pink z-10 
-    left-0 w-2/5 xl:w-auto xl:pl-0 pl-0 transition-all duration-300 ease-in ${open ? "top-[75px] opacity-100] overflow-y-visible" : "top-[-550px]"
+    left-0 sm:w-full md:w-1/3 xl:w-auto xl:pl-0 pl-0 transition-all duration-300 ease-in ${open ? "top-[75px] opacity-100] overflow-y-visible" : "top-[-550px]"
                 }`}
             >
-              <img src={truck} className="h-12 pl-4 pt-0" />
+              <img src={truck} className={`h-12 pl-4 pt-0 ${open ? "hidden" : "block"
+                }`} />
 
 
               {Links.map((link) => (
