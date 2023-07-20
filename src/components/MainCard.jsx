@@ -265,7 +265,7 @@ function Card({
         onClick={() => mintNFT()}*/
           onClick={onClickUrl("https://campfire.exchange/collections/0x20ef794f891c050d27bec63f50b202cce97d7224")}
         >
-            View Collection
+            View NFTs
           </button></div>
 
 
