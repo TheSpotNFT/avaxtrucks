@@ -17,7 +17,7 @@ function LogoutButton({
           {/* <h1 className="text-slate-600 text-right font-mono px-10 py-0"><b>Wallet:</b> {(chainId==="0xa86a")?account.substring(0,5)+'...'+account.slice(-4):<button className="text-[red]" onClick={()=>switchNetwork("0xa86a")}>Switch to Avalanche!</button>}</h1> */}
         </div>
         <button
-          className="pixelated rounded-sm px-4 py-0 border-4 border-opacity-80 border-black text-xl text-black 
+          className="pixelated rounded-sm px-4 py-0 border-4 border-opacity-80 border-black text-l text-black 
           hover:bg-avaxtruck-green hover:border-white hover:text-white duration-300 hover:scale-105"
           onClick={() => logoutOfWeb3Modal()}
         >

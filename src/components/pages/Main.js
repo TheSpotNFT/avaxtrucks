@@ -50,13 +50,13 @@ const slideRight = () => {
       
      
 
-      <div className="sm:p-1 sm:pt-4 md:p-4 md:pt-24 bg-opacity-100 pixelated">
+      <div className="sm:p-1 sm:pt-4 md:p-4 md:pt-4 bg-opacity-100 pixelated">
       <Card 
       alt="Avax Trucks"
       title="Avax Trucks"
-      line3="Production Fee: tdb"
-      line4="Max 10 per transaction"
-      totalminted="Total Complete: 0/5000"
+      line3="Production Fee: 2 Avax"
+      line4="Max 5 per transaction"
+      totalminted="Total Complete: 0/10000"
       docs="Avax Truck Description"
       setTxProcessing={setTxProcessing}
       /></div>

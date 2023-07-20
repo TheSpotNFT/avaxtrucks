@@ -185,9 +185,9 @@ function Card({
 
 
       </div>
-      <div className={`w-full h-full ${showDocs === true ? 'hidden' : 'visible'}`}>
+      <div className={`pr-8 pixelated text-white drop-shadow-2xl shadow-black w-full ${showDocs === true ? 'hidden' : 'visible'}`}>
 
-        <div className='pixelated text-white shadow-lg lg:pt-10 xl:pt-8 sm:pt-4 md:pt-10 xl:text-2xl lg:text-1xl md:text-base sm:text-lg w-full pb-10 px-4'>{docs}</div>
+        <div className='pixelated bg-black bg-opacity-60 text-white shadow-lg lg:pt-10 xl:pt-8 sm:pt-4 md:pt-10 xl:text-2xl lg:text-1xl md:text-base sm:text-lg w-full pb-10 px-4'>{docs}</div>
 
         <div className='md:pt-0 lg:pt-0 xl:pt-1 pb-2 md:pb-5 sm:pt-4 sm:pb-2 text-lg w-full place-content-end'><button
           className="m-1 w-2/3 rounded-sm px-1 py-1 border-2 border-gray-200 bg-black

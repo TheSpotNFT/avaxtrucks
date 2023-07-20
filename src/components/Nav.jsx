@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import LogoutButton from "./Logout";
 import { GiHamburgerMenu } from "react-icons/gi";
 import "../index.css";
+import truck from "../assets/avaxtrucks/Plum.png";
 
 export const Nav = ({
   account,
@@ -13,7 +14,7 @@ export const Nav = ({
 }) => {
 
   let Links = [
-    { name: "Avax Trucks", link: "/" },
+    // { name: "Avax Trucks", link: "/" },
     { name: "Metamask Tutorial", link: "/docs" },
     { name: "Avalanche FAQ", link: "/faq" },
     { name: "Twitter", link: "https://twitter.com/AvaxTrucks" },
@@ -32,13 +33,13 @@ export const Nav = ({
     left-0 w-2/5 xl:w-auto xl:pl-0 pl-0 transition-all duration-300 ease-in ${open ? "top-[75px] opacity-100] overflow-y-visible" : "top-[-550px]"
                 }`}
             >
-
+              <img src={truck} className="h-12 pl-4 pt-0" />
 
 
               {Links.map((link) => (
                 <li
                   key={link.name}
-                  className="pixelated overflow-y-visible z-10 md:ml-8 lg:ml-8 xl:ml-8 xxl:ml-8 sm:text-2xl md:text-2xl text-2xl hover:text-white duration-300 md:my-4 lg:my-4 xl:my-0 xxl:my-0 my-4 pl-4"
+                  className="pixelated overflow-y-visible z-10 md:ml-8 lg:ml-8 xl:ml-8 sm:text-2xl md:text-base text-base hover:text-white duration-300 md:my-4 lg:my-4 xl:my-0 xxl:my-0 my-4 pl-8 2xl:pl-6"
                 >
                   <a
                     target={
