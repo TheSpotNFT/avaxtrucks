@@ -182,7 +182,7 @@ function Card({
         <div className="px-6 py-4">
 
 
-          <div className="w-full flex pl-3 pb-5">
+          <div className="w-full flex pl-3 pb-4 pt-16">
             <div className="flex pr-4 pt-1 pb-4">
               <input
                 type="number"
@@ -232,7 +232,7 @@ function Card({
             Claim PDX Free Mints!
           </button></div>
           <div className='pt-4 md:pb-2 sm:text-lg md:text-lg lg:text-3xl w-full'></div></div>
-        <div className='flex md:pt-0 lg:pt-0 xl:pt-24 pb-6 md:pb-6 sm:pt-4 sm:pb-2 text-lg w-full content-end p-4'><button
+        <div className='flex md:pt-0 lg:pt-0 xl:pt-4 pb-6 md:pb-6 sm:pt-4 sm:pb-2 text-lg w-full content-end p-4'><button
           className="m-1 w-1/2 rounded-sm pl-4 px-1 py-1 border-4 bg-black border-gray-200 text-white
      hover:bg-gray-200 hover:text-gray-900 duration-300 font-mansalva font-bold md:text-sm lg:text-lg"
           /*disabled={props.txProcesssing}
