@@ -223,7 +223,7 @@ function Card({
           </div>
         </div></div>
 
-      <div className={`sm:pl-4 md:pl-0 md:pt-2 lg:pt-8 pr-4 pixelated text-white drop-shadow-2xl shadow-black w-full ${showDocs === true ? 'visible' : 'hidden'}`}>
+      <div className={`sm:pl-0 md:pl-0 md:pt-2 lg:pt-8 sm:pr-0 md:pr-4 pixelated text-white drop-shadow-2xl shadow-black w-full ${showDocs === true ? 'visible' : 'hidden'}`}>
         <div className='bg-black bg-opacity-60'>
           <div className='md:pt-2 lg-pt-16 lg:text-4xl md:text-2xl w-full pt-4 sm:text-lg pb-4'>Avax Trucks</div>
           <div className='md:pt-0 lg:pt-2 xl:pt-20 sm:pt-4 md:text-xl sm:text-lg w-full'>Supply: 10k</div>
@@ -270,12 +270,12 @@ function Card({
 
 
       </div>
-      <div className={`sm:pl-4 md:pl-0 md:pt-2 lg:pt-8 pr-4 pixelated text-white drop-shadow-2xl shadow-black w-full ${showDocs === true ? 'hidden' : 'visible'}`}>
+      <div className={`sm:pl-4 md:pl-0 md:pt-2 lg:pt-8 sm:pr-0 md:pr-4 pixelated text-white drop-shadow-2xl shadow-black w-full ${showDocs === true ? 'hidden' : 'visible'}`}>
 
-        <div className='pixelated bg-black bg-opacity-60 text-white shadow-lg lg:pt-10 xl:pt-8 sm:pt-4 md:pt-10 xl:text-2xl lg:text-1xl md:text-base sm:text-lg w-full pb-10 px-4'>{docs}
-          <div className='md:pt-10 sm:pt-4 md:text-2xl sm:text-md w-full'>Built for Truckers.</div>
-          <div className='pt-4 sm:text-base md:text-2xl w-full'>By Truckers.</div>
-          <div className='pt-4 sm:text-base md:text-2xl w-full'>Rebuilding the trucking community around the world.</div>
+        <div className='pixelated bg-black bg-opacity-60 text-white shadow-lg lg:pt-10 xl:pt-8 sm:pt-4 md:pt-10 xl:text-2xl lg:text-1xl md:text-base sm:text-lg w-full pb-10 px-4'>
+          <div className='md:pt-2 sm:pt-4 md:text-lg sm:text-md w-full'>Built for Truckers.</div>
+          <div className='pt-4 sm:text-base md:text-lg w-full'>By Truckers.</div>
+          <div className='pt-4 sm:text-base md:text-lg w-full'>Rebuilding the trucking community around the world.</div>
         </div>
 
         <div className='md:pt-0 lg:pt-0 xl:pt-1 pb-2 md:pb-5 sm:pt-4 sm:pb-2 text-lg w-full place-content-end'><button
