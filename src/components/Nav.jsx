@@ -14,7 +14,7 @@ export const Nav = ({
 }) => {
 
   let Links = [
-    // { name: "Avax Trucks", link: "/" },
+    { name: "Home", link: "/" },
     { name: "Metamask Tutorial", link: "/docs" },
     { name: "Avalanche FAQ", link: "/faq" },
     { name: "Twitter", link: "https://twitter.com/AvaxTrucks" },
@@ -22,7 +22,7 @@ export const Nav = ({
   ];
 
   const [open, setOpen] = useState(false);
-
+  console.log(account);
   return (
     <nav className="main-nav pb-20 md:pb-20 lg:pb-15 xl:pb-15 2xl:pb-15 z-10 relative">
       <div className="shadow-sm w-full fixed top-0 left-0 pb-0 md:pb-4 sm:pb-4 bg-avaxtruck-pink pt-4">

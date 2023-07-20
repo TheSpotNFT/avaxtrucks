@@ -44,7 +44,7 @@ const slideRight = () => {
   var slider = document.getElementById('slider')
   slider.scrollLeft = slider.scrollLeft + 800
 }
-
+  console.log('main', account);
   return (
     <div className="bg-transparent pt-10">
       
@@ -59,6 +59,7 @@ const slideRight = () => {
       totalminted="Total Complete: 0/10000"
       docs="Avax Truck Description"
       setTxProcessing={setTxProcessing}
+      account={account}
       /></div>
   
     

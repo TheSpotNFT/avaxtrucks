@@ -7,6 +7,7 @@ import hotpink from "../assets/avaxtrucks/Hot_Pink.png";
 
 
 function Card({
+  account,
   image,
   alt,
   title,
@@ -19,6 +20,58 @@ function Card({
   docs,
   setTxProcessing
 }) {
+
+  const contractAddress = '0xC231e5Ce8f65f996463BE8b486E88BB14219C468';
+  const contractABI = [
+    {
+      constant: true,
+      inputs: [{ name: '_owner', type: 'address' }],
+      name: 'balanceOf',
+      outputs: [{ name: 'balance', type: 'uint256' }],
+      payable: false,
+      stateMutability: 'view',
+      type: 'function',
+    },
+    {
+      constant: true,
+      inputs: [
+        { name: '_owner', type: 'address' },
+        { name: '_index', type: 'uint256' },
+      ],
+      name: 'tokenOfOwnerByIndex',
+      outputs: [{ name: 'tokenId', type: 'uint256' }],
+      payable: false,
+      stateMutability: 'view',
+      type: 'function',
+    },
+  ];
+
+  // Function to check if a wallet holds an NFT and return the tokenID
+  async function getTokenID(account) {
+    if (typeof window.ethereum === 'undefined') {
+      throw new Error('Ethereum provider not found. Make sure you have a compatible wallet installed.');
+    }
+
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const contractInstance = new ethers.Contract(contractAddress, contractABI, provider);
+
+    try {
+      // Call the balanceOf function of the contract to get the token count owned by the walletAddress
+      const tokenCount = await contractInstance.balanceOf(account);
+
+      // If the wallet holds at least one token, retrieve the first tokenID
+      if (parseInt(tokenCount, 10) > 0) {
+        const tokenID = await contractInstance.tokenOfOwnerByIndex(account, 0);
+        return tokenID.toString(); // Convert BigNumber to string
+      } else {
+        // If the wallet does not hold any tokens, return null or handle it as you wish
+        return null;
+      }
+    } catch (error) {
+      console.error('Error while fetching NFT data:', error);
+      // Handle the error here
+    }
+  }
 
   const onClickUrl = (url) => {
     return () => openInNewTab(url);
@@ -114,6 +167,11 @@ function Card({
   }
 
   const [showDocs, setShowDocs] = useState(true);
+  const [tokenId, setTokenId] = useState("0");
+
+  useEffect(() => {
+    getTokenID();
+  }, [account]);
 
   return (
 
@@ -155,13 +213,24 @@ function Card({
           </div>
         </div></div>
 
-      <div className={`pr-8 pixelated text-white drop-shadow-2xl shadow-black w-full ${showDocs === true ? 'visible' : 'hidden'}`}>
+      <div className={`pt-8 pr-8 pixelated text-white drop-shadow-2xl shadow-black w-full ${showDocs === true ? 'visible' : 'hidden'}`}>
         <div className='bg-black bg-opacity-60'>
           <div className='pr-4 md:pt-8 lg-pt-16 lg:text-4xl md:text-4xl w-full pt-4 sm:text-2xl pb-4'>Avax Trucks</div>
           <div className='lg:pt-2 xl:pt-20 sm:pt-4 md:text-3xl sm:text-lg w-full'>Supply: 10k</div>
           <div className='pt-4 sm:text-lg md:text-3xl w-full'></div>
           <div className='pt-4 sm:text-lg md:text-3xl w-full'>{line3}</div>
           <div className='pt-4 sm:text-lg md:text-3xl w-full'>{line4}</div>
+          <div className='pt-4'><div className='pixelated'>Your PDX Token ID: {tokenId}</div><button
+            className="m-1 w-1/2 rounded-sm pl-4 px-1 py-1 border-4 bg-black border-gray-200 text-white
+     hover:bg-gray-200 hover:text-gray-900 duration-300 font-mansalva font-bold md:text-sm lg:text-lg"
+          /*disabled={props.txProcesssing}
+        onClick={() => mintNFT()}
+          onClick={() => {
+            setShowDocs((v) => !v);
+          }}*/
+          >
+            Claim PDX Free Mints!
+          </button></div>
           <div className='pt-4 md:pb-2 sm:text-lg md:text-lg lg:text-3xl w-full'></div></div>
         <div className='flex md:pt-0 lg:pt-0 xl:pt-24 pb-6 md:pb-6 sm:pt-4 sm:pb-2 text-lg w-full content-end p-4'><button
           className="m-1 w-1/2 rounded-sm pl-4 px-1 py-1 border-4 bg-black border-gray-200 text-white
@@ -187,7 +256,11 @@ function Card({
       </div>
       <div className={`pr-8 pixelated text-white drop-shadow-2xl shadow-black w-full ${showDocs === true ? 'hidden' : 'visible'}`}>
 
-        <div className='pixelated bg-black bg-opacity-60 text-white shadow-lg lg:pt-10 xl:pt-8 sm:pt-4 md:pt-10 xl:text-2xl lg:text-1xl md:text-base sm:text-lg w-full pb-10 px-4'>{docs}</div>
+        <div className='pixelated bg-black bg-opacity-60 text-white shadow-lg lg:pt-10 xl:pt-8 sm:pt-4 md:pt-10 xl:text-2xl lg:text-1xl md:text-base sm:text-lg w-full pb-10 px-4'>{docs}
+          <div className='md:pt-10 sm:pt-4 md:text-2xl sm:text-md w-full'>Built for Truckers.</div>
+          <div className='pt-4 sm:text-base md:text-2xl w-full'>By Truckers.</div>
+          <div className='pt-4 sm:text-base md:text-2xl w-full'>Rebuilding the trucking community around the world.</div>
+        </div>
 
         <div className='md:pt-0 lg:pt-0 xl:pt-1 pb-2 md:pb-5 sm:pt-4 sm:pb-2 text-lg w-full place-content-end'><button
           className="m-1 w-2/3 rounded-sm px-1 py-1 border-2 border-gray-200 bg-black
