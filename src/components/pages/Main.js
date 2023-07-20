@@ -46,7 +46,7 @@ const slideRight = () => {
 }
   console.log('main', account);
   return (
-    <div className="bg-transparent pt-10">
+    <div className="bg-transparent pt-6">
       
      
 

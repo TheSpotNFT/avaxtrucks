@@ -46,8 +46,10 @@ function Card({
     },
   ];
 
+
+
   // Function to check if a wallet holds an NFT and return the tokenID
-  async function getTokenID(account) {
+  async function getTokenID() {
     if (typeof window.ethereum === 'undefined') {
       throw new Error('Ethereum provider not found. Make sure you have a compatible wallet installed.');
     }
@@ -57,16 +59,20 @@ function Card({
 
     try {
       // Call the balanceOf function of the contract to get the token count owned by the walletAddress
+      console.log("Trying...");
+      console.log(account);
       const tokenCount = await contractInstance.balanceOf(account);
 
       // If the wallet holds at least one token, retrieve the first tokenID
       if (parseInt(tokenCount, 10) > 0) {
         const tokenID = await contractInstance.tokenOfOwnerByIndex(account, 0);
         return tokenID.toString(); // Convert BigNumber to string
+
       } else {
         // If the wallet does not hold any tokens, return null or handle it as you wish
         return null;
       }
+
     } catch (error) {
       console.error('Error while fetching NFT data:', error);
       // Handle the error here
@@ -169,9 +175,9 @@ function Card({
   const [showDocs, setShowDocs] = useState(true);
   const [tokenId, setTokenId] = useState("0");
 
-  useEffect(() => {
+  /*useEffect(() => {
     getTokenID();
-  }, [account]);
+  }, [account]);*/
 
   return (
 
@@ -220,17 +226,23 @@ function Card({
           <div className='pt-4 sm:text-lg md:text-3xl w-full'></div>
           <div className='pt-4 sm:text-lg md:text-3xl w-full'>{line3}</div>
           <div className='pt-4 sm:text-lg md:text-3xl w-full'>{line4}</div>
-          <div className='pt-4'><div className='pixelated'>Your PDX Token ID: {tokenId}</div><button
+          <div className='pt-4'><div className='pixelated pb-4'>Input your PDX Token ID: <input
+            type="number"
+            className="border-2 border-slate-600 bg-slate-400 text-left pixelated text-lg placeholder-slate-600 pl-2 pr-4 w-16"
+            placeholder="Amount"
+            value={textinput}
+            onChange={textinputUser.bind(this)}
+          /></div><button
             className="m-1 w-1/2 rounded-sm pl-4 px-1 py-1 border-4 bg-black border-gray-200 text-white
-     hover:bg-gray-200 hover:text-gray-900 duration-300 font-mansalva font-bold md:text-sm lg:text-lg"
+     hover:bg-gray-200 hover:text-gray-900 duration-300 font-mansalva font-bold md:text-sm lg:text-md"
           /*disabled={props.txProcesssing}
         onClick={() => mintNFT()}
           onClick={() => {
             setShowDocs((v) => !v);
           }}*/
           >
-            Claim PDX Free Mints!
-          </button></div>
+              Claim PDX Free Mints!
+            </button></div>
           <div className='pt-4 md:pb-2 sm:text-lg md:text-lg lg:text-3xl w-full'></div></div>
         <div className='flex md:pt-0 lg:pt-0 xl:pt-4 pb-6 md:pb-6 sm:pt-4 sm:pb-2 text-lg w-full content-end p-4'><button
           className="m-1 w-1/2 rounded-sm pl-4 px-1 py-1 border-4 bg-black border-gray-200 text-white
@@ -244,7 +256,7 @@ function Card({
           Info
         </button><button
           className="m-1 w-1/2 rounded-sm px-1 py-1 border-4 bg-black border-gray-200 text-white
-     hover:bg-gray-200 hover:text-gray-900 duration-300 font-mansalva font-bold md:text-sm lg:text-lg"
+     hover:bg-gray-200 hover:text-gray-900 duration-300 font-mansalva font-bold md:text-sm lg:text-sm"
           /*disabled={props.txProcesssing}
         onClick={() => mintNFT()}*/
           onClick={onClickUrl("https://campfire.exchange/collections/0x20ef794f891c050d27bec63f50b202cce97d7224")}
