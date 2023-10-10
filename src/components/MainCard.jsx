@@ -206,8 +206,8 @@ function Card({
               className="m-1 w-full bg-black rounded-sm px-1 py-5 border-4 border-gray-200 text-white
      hover:bg-gray-200 hover:text-gray-900 duration-300 pixelated font-bold text-lg"
 
-              //onClick={() => mintNFT()}
-              onClick={alertClick}
+              onClick={() => mintNFT()}
+            //onClick={alertClick}
             >
               Mint {textinput}
             </button></div>
