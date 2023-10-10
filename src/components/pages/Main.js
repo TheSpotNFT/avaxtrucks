@@ -54,9 +54,9 @@ const slideRight = () => {
       <Card 
       alt="Avax Trucks"
       title="Avax Trucks"
-      line3="Production Fee: 2 Avax"
+      line3="Production Fee: 1.5 Avax"
       line4="Max 5 per transaction"
-      totalminted="Total Complete: 0/10000"
+      totalminted="Total Complete: 0/3500"
       docs="Avax Truck Description"
       setTxProcessing={setTxProcessing}
       account={account}

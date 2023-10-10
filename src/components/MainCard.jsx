@@ -225,12 +225,12 @@ function Card({
 
       <div className={`sm:pl-0 md:pl-0 md:pt-2 lg:pt-8 sm:pr-0 md:pr-4 pixelated text-white drop-shadow-2xl shadow-black w-full ${showDocs === true ? 'visible' : 'hidden'}`}>
         <div className='bg-black bg-opacity-60'>
-          <div className='md:pt-2 lg-pt-16 lg:text-4xl md:text-2xl w-full pt-4 sm:text-lg pb-4'>Avax Trucks</div>
-          <div className='md:pt-0 lg:pt-2 xl:pt-20 sm:pt-4 md:text-xl sm:text-lg w-full'>Supply: 10k</div>
+          <div className='md:pt-4 lg-pt-16 lg:text-4xl md:text-2xl w-full pt-4 sm:text-lg pb-4'>Avax Trucks</div>
+          <div className='md:pt-0 lg:pt-2 xl:pt-20 sm:pt-4 md:text-xl sm:text-lg w-full'>Supply: 3.5k</div>
           <div className='md:pt-2 lg:pt-4 sm:text-lg md:text-xl w-full'></div>
           <div className='md:pt-2 lg:pt-4 sm:text-lg md:text-xl w-full'>{line3}</div>
           <div className='md:pt-2 lg:pt-4 sm:text-lg md:text-xl w-full'>{line4}</div>
-          <div className='pt-4'><div className='pixelated pb-4 px-4'>Input your PDX Token ID: <input
+          {/*<div className='pt-4'><div className='pixelated pb-4 px-4'>Input your PDX Token ID: <input
             type="number"
             className="border-2 border-slate-600 bg-slate-400 text-left pixelated text-lg placeholder-slate-600 pl-2 pr-4 w-16"
             placeholder="Amount"
@@ -239,16 +239,12 @@ function Card({
           /></div><div className='md:pr-2'><button
             className="m-1 md:w-full lg:w-1/2 rounded-sm px-1 py-1 border-4 bg-black border-gray-200 text-white
      hover:bg-gray-200 hover:text-gray-900 duration-300 font-mansalva font-bold md:text-sm lg:text-md"
-          /*disabled={props.txProcesssing}
-        onClick={() => mintNFT()}
-          onClick={() => {
-            setShowDocs((v) => !v);
-          }}*/
+          
           >
             Claim PDX Free Mints!
-          </button></div></div>
+          </button></div></div>*/}
           <div className='pt-4 md:pb-2 sm:text-lg md:text-lg lg:text-3xl w-full'></div></div>
-        <div className='flex md:pt-0 lg:pt-0 xl:pt-4 pb-6 md:pb-6 sm:pt-4 sm:pb-2 text-lg w-full content-end p-4'><button
+        <div className='flex md:pt-20 lg:pt-0 xl:pt-4 pb-6 md:pb-6 sm:pt-4 sm:pb-2 text-lg w-full content-end p-4'><button
           className="m-1 w-1/2 rounded-sm pr-2 pl-2 px-1 py-1 border-4 bg-black border-gray-200 text-white
      hover:bg-gray-200 hover:text-gray-900 duration-300 font-mansalva font-bold md:text-sm lg:text-lg"
           /*disabled={props.txProcesssing}
