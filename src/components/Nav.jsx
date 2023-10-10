@@ -15,10 +15,10 @@ export const Nav = ({
 
   let Links = [
     { name: "Home", link: "/" },
-    { name: "Metamask Tutorial", link: "/docs" },
-    { name: "Avalanche FAQ", link: "/faq" },
+    //{ name: "Metamask Tutorial", link: "/docs" },
+    //{ name: "Avalanche FAQ", link: "/faq" },
     { name: "Twitter", link: "https://twitter.com/AvaxTrucks" },
-    { name: "Discord", link: "https://discord.com/invite/" },
+    { name: "Discord", link: "https://discord.gg/gbfv2GuV" },
   ];
 
   const [open, setOpen] = useState(false);
