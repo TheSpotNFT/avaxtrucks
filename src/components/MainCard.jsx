@@ -145,7 +145,7 @@ function Card({
 
           let options = {
             // price is 1.5 avax
-            value: ethers.utils.parseEther(`${textinput * 1.5}`),
+            value: ethers.utils.parseEther(`${textinput * 1}`),
           };
 
           let tx = await contract.mint(textinput, options);
@@ -227,7 +227,7 @@ function Card({
         <div className='bg-black bg-opacity-60'>
           <div className='md:pt-4 lg-pt-16 lg:text-4xl md:text-2xl w-full pt-4 sm:text-lg pb-4'>Avax Trucks</div>
           <div className='md:pt-0 lg:pt-2 xl:pt-20 sm:pt-4 md:text-xl sm:text-lg w-full'>Supply: 3.5k</div>
-          <div className='md:pt-2 lg:pt-4 sm:text-lg md:text-xl w-full'></div>
+
           <div className='md:pt-2 lg:pt-4 sm:text-lg md:text-xl w-full'>{line3}</div>
           <div className='md:pt-2 lg:pt-4 sm:text-lg md:text-xl w-full'>{line4}</div>
           {/*<div className='pt-4'><div className='pixelated pb-4 px-4'>Input your PDX Token ID: <input
@@ -259,7 +259,7 @@ function Card({
      hover:bg-gray-200 hover:text-gray-900 duration-300 font-mansalva font-bold md:text-xs lg:text-sm"
           /*disabled={props.txProcesssing}
         onClick={() => mintNFT()}*/
-          onClick={onClickUrl("https://campfire.exchange/collections/0x20ef794f891c050d27bec63f50b202cce97d7224")}
+          onClick={onClickUrl("https://campfire.exchange/collections/0x5b18091102e1815a594d708ef0d270d9fe8467b4")}
         >
             View NFTs
           </button></div>
