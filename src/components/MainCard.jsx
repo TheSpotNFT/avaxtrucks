@@ -144,8 +144,8 @@ function Card({
           );
 
           let options = {
-            // price is 1.5 avax
-            value: ethers.utils.parseEther(`${textinput * 1}`),
+            // price is 0.5 avax
+            value: ethers.utils.parseEther(`${textinput * 0.5}`),
           };
 
           let tx = await contract.mint(textinput, options);
