@@ -145,7 +145,7 @@ function Card({
 
           let options = {
             // price is 0.25 avax
-            value: ethers.utils.parseEther(`${textinput * 0.25}`),
+            value: ethers.utils.parseEther(`${textinput * 0.15}`),
             gasLimit: 200000,
           };
 
