@@ -54,7 +54,7 @@ const slideRight = () => {
       <Card 
       alt="Avax Trucks"
       title="Avax Trucks"
-      line3="Production Fee: 0.25 Avax"
+      line3="Production Fee: 0.15 Avax"
       line4="Max 5 per transaction"
       totalminted="Total Complete: 0/3500"
       docs="Avax Truck Description"
